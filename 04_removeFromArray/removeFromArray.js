@@ -1,10 +1,14 @@
-const removeFromArray = function(myArray, myValue) {
+const removeFromArray = function(myArray, ...myValues) {    // gather all the optional values into an array
     let arrayLen = myArray.length;
-    for (let i = 0; i <= arrayLen; i++) {   // loop through array elements
-        if (myArray[i] === myValue) {   // if array element equal to myValue
-            myArray.splice(i, 1);     // remove one element from the specified position
+
+    myValues.forEach((myValue) => {     // iterate over each value in the myValues array
+        for (let i = 0; i <= arrayLen; i++) {   // loop through array elements
+            if (myArray[i] === myValue) {   // check if array element equal to myValue
+                myArray.splice(i, 1);     // remove one element from the specified position
+            }
         }
-    }
+    });
+
     return myArray;
 }
 
